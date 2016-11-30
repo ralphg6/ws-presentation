@@ -1,7 +1,7 @@
 var conn;
 
 function openConn(){
-	conn = new WebSocket("ws://"+location.hostname+":8080/ws");
+	conn = new WebSocket("ws://"+location.hostname+"/ws");
     conn.onclose = function(evt) {
 		console.log("Connection closed");
 		setTimeout(openConn, 3000);
