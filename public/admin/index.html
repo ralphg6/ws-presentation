@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Admin</title>
+
+	<style type="text/css">
+		html {
+		    min-height: 100%;
+		}
+		body {
+		    padding: 0;
+		    margin: 0;
+		    width: 100%;
+		    min-height: 100%;
+		    background: #4a4a4a;
+		}
+		div {
+			cursor: pointer;
+		    float: left;
+		    width: 200px;
+		    padding: 11% 0;
+		    margin: 2.5% 2%;
+		    text-align: center;
+		    background-color: gray;
+		    border: 2px outset;
+		    font-size: 400%;
+		}
+	
+	</style>
+</head>
+<body>
+	<div id="slide1">1</div>
+	<div id="slide2">2</div>
+	<div id="slide3">3</div>
+	<div id="slide4">4</div>
+	<div id="slide5">5</div>
+	<div id="slide6">6</div>
+	<div id="slide7">7</div>
+	<div id="slide8">8</div>
+	<div id="slide9">9</div>
+	<div id="slide10">10</div>
+	<div id="slide11">11</div>
+	<div id="slide12">12</div>
+	<div id="slide13">13</div>
+	<div id="slide14">14</div>
+	<div id="slide15">15</div>
+	<div id="slide16">16</div>
+	<div id="slide17">17</div>
+	<div id="slide18">18</div>
+	<div id="slide19">19</div>
+	<div id="slide20">20</div>
+	
+	<script src="razax.min.js"></script>
+	<script type="text/javascript">
+		function ShowResult(ReturnValue){
+		   alert(ReturnValue);
+		}
+	    var buttons = document.getElementsByTagName('div');
+		//console.log(buttons);
+		for(var i = 0; i < buttons.length; i++){
+		    buttons[i].onclick = function(e){
+			  	var AjaxCaller = new razax.zhr("/control?slide="+e.target.id, "ShowResult");
+  				AjaxCaller.dopost();
+			};
+		}
+	</script>
+</body>
+</html>
